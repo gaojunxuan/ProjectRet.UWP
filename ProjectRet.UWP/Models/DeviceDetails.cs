@@ -14,6 +14,8 @@ namespace ProjectRet.UWP.Models
 {
     public class DeviceDetails
     {
+        [PrimaryKey,AutoIncrement]
+        public int Id { get; set; }
         public string DeviceName { get; set; }
         public string UniqueId { get; set; }
         public string Credential { get; set; }

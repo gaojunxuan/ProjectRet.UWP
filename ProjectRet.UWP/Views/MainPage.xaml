@@ -119,7 +119,7 @@
                                 </StackPanel>
                                 <FlyoutBase.AttachedFlyout>
                                     <MenuFlyout>
-                                        <MenuFlyoutItem x:Uid="DeteleBtn" Text="Delete" Command="{Binding DeleteCommand,Source={Binding MainViewModel, Source={StaticResource Locator}}}" CommandParameter="{Binding UniqueId}" IsEnabled="{Binding ShowCommandButton,Converter={StaticResource BoolConverter}}"></MenuFlyoutItem>
+                                        <MenuFlyoutItem x:Uid="DeleteBtn" Text="Delete" Command="{Binding DeleteCommand,Source={Binding MainViewModel, Source={StaticResource Locator}}}" CommandParameter="{Binding UniqueId}" IsEnabled="{Binding ShowCommandButton,Converter={StaticResource BoolConverter}}"></MenuFlyoutItem>
                                     </MenuFlyout>
                                 </FlyoutBase.AttachedFlyout>
                             </Grid>

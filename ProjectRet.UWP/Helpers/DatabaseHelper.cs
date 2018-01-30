@@ -39,7 +39,7 @@ namespace ProjectRet.UWP.Helpers
             var item = _conn.Query<DeviceDetails>($"SELECT * FROM DeviceDetails WHERE UniqueId = '{uniqueId}'");
             if (item != null && item.Count != 0)
             {
-                _conn.Delete(item);
+                _conn.Delete(item.First());
             }
         }
     }

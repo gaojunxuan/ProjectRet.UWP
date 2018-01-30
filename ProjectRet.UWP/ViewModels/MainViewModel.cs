@@ -96,7 +96,6 @@ namespace ProjectRet.UWP.ViewModels
                     ?? (_deleteCommand = new RelayCommand<string>(
                     async(x) =>
                     {
-                        m_remoteSystemWatcher.Stop();
                         DatabaseHelper.Delete(x);
                         await BuildDeviceList();
                     }));
