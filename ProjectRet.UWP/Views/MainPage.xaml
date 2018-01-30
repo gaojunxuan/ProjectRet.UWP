@@ -1,0 +1,156 @@
+﻿<Page
+    x:Class="ProjectRet.UWP.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Style="{StaticResource PageStyle}"
+    DataContext="{Binding MainViewModel, Source={StaticResource Locator}}"
+    xmlns:converter="using:ProjectRet.UWP.Helpers"
+    mc:Ignorable="d" Loaded="Page_Loaded">
+    <Page.Resources>
+        <Style x:Key="ListViewItemStyle1" TargetType="ListViewItem">
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+            <Setter Property="Background" Value="{ThemeResource ListViewItemBackground}"/>
+            <Setter Property="Foreground" Value="{ThemeResource ListViewItemForeground}"/>
+            <Setter Property="TabNavigation" Value="Local"/>
+            <Setter Property="IsHoldingEnabled" Value="True"/>
+            <Setter Property="Padding" Value="12,0,12,0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="MinWidth" Value="{ThemeResource ListViewItemMinWidth}"/>
+            <Setter Property="MinHeight" Value="{ThemeResource ListViewItemMinHeight}"/>
+            <Setter Property="AllowDrop" Value="False"/>
+            <Setter Property="UseSystemFocusVisuals" Value="True"/>
+            <Setter Property="FocusVisualMargin" Value="0"/>
+            <Setter Property="FocusVisualPrimaryBrush" Value="{ThemeResource ListViewItemFocusVisualPrimaryBrush}"/>
+            <Setter Property="FocusVisualPrimaryThickness" Value="2"/>
+            <Setter Property="FocusVisualSecondaryBrush" Value="{ThemeResource ListViewItemFocusVisualSecondaryBrush}"/>
+            <Setter Property="FocusVisualSecondaryThickness" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListViewItem">
+                        <ListViewItemPresenter CheckBrush="{ThemeResource ListViewItemCheckBrush}" ContentMargin="{TemplateBinding Padding}" CheckMode="{ThemeResource ListViewItemCheckMode}" ContentTransitions="{TemplateBinding ContentTransitions}" CheckBoxBrush="{ThemeResource ListViewItemCheckBoxBrush}" DragForeground="{ThemeResource ListViewItemDragForeground}" DragOpacity="{ThemeResource ListViewItemDragThemeOpacity}" DragBackground="{ThemeResource ListViewItemDragBackground}" DisabledOpacity="{ThemeResource ListViewItemDisabledThemeOpacity}" FocusVisualPrimaryBrush="Transparent" FocusVisualSecondaryThickness="{TemplateBinding FocusVisualSecondaryThickness}" FocusBorderBrush="Transparent" FocusVisualMargin="{TemplateBinding FocusVisualMargin}" FocusVisualPrimaryThickness="{TemplateBinding FocusVisualPrimaryThickness}" FocusSecondaryBorderBrush="Transparent" FocusVisualSecondaryBrush="Transparent" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Control.IsTemplateFocusTarget="True" PointerOverForeground="{ThemeResource ListViewItemForegroundPointerOver}" PressedBackground="Transparent" PlaceholderBackground="{ThemeResource ListViewItemPlaceholderBackground}" PointerOverBackground="Transparent" ReorderHintOffset="{ThemeResource ListViewItemReorderHintThemeOffset}" SelectedPressedBackground="Transparent" SelectionCheckMarkVisualEnabled="{ThemeResource ListViewItemSelectionCheckMarkVisualEnabled}" SelectedForeground="{ThemeResource ListViewItemForegroundSelected}" SelectedPointerOverBackground="Transparent" SelectedBackground="Transparent" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <converter:DeviceTypeToImageSourceConverter x:Key="IconConverter" />
+        <converter:VisibilityToBoolConverter x:Key="BoolConverter" />
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <FlipView x:Name="Guide_FlipView" Grid.Row="0" Loaded="Guide_FlipView_Loaded">
+            <FlipViewItem>
+                <Grid Background="#FF0078D7">
+                    <TextBlock x:Uid="Guide1" Text="Configure" Style="{StaticResource HeaderTextBlockStyle}" Foreground="White" FocusVisualPrimaryBrush="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,40,0,0"></TextBlock>
+                </Grid>
+            </FlipViewItem>
+            <FlipViewItem>
+                <Grid Background="#FF0078D7">
+                    <TextBlock x:Uid="Guide2" Text="Control" Style="{StaticResource HeaderTextBlockStyle}" Foreground="White" FocusVisualPrimaryBrush="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,40,0,0"></TextBlock>
+                </Grid>
+            </FlipViewItem>
+            <FlipViewItem>
+                <Grid Background="#FF0078D7">
+                    <TextBlock x:Uid="Guide3" Text="Mobile apps" Style="{StaticResource HeaderTextBlockStyle}" Foreground="White" FocusVisualPrimaryBrush="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,40,0,0"></TextBlock>
+                </Grid>
+            </FlipViewItem>
+        </FlipView>
+        <Grid Grid.Row="1">
+            <StackPanel>
+                <Grid>
+                    <TextBlock x:Uid="DeviceListHeader" x:Name="DeviceListHeader_Tbk" Text="Device List" Style="{StaticResource SubheaderTextBlockStyle}" Foreground="Gray" Margin="20,10,0,0" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                    <HyperlinkButton x:Uid="RefreshBtn" Content="Refresh" HorizontalAlignment="Right" Margin="0,10,20,0" Command="{Binding RefreshCommand}">
+                        <HyperlinkButton.ContentTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="" FontFamily="Segoe MDL2 Assets" Margin="0,4,8,0" FontSize="18"></TextBlock>
+                                    <TextBlock Text="{Binding}" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="18" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </HyperlinkButton.ContentTemplate>
+                    </HyperlinkButton>
+                </Grid>
+                <ListView Name="DeviceList_ListView" Margin="8,8,0,0" SelectionMode="Single" UseSystemFocusVisuals="False" ItemContainerStyle="{StaticResource ListViewItemStyle1}" ItemsSource="{Binding DeviceList}" HorizontalContentAlignment="Stretch">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid x:Name="ListViewGrid" Margin="0,0,0,8" RightTapped="ListViewGrid_RightTapped" Holding="ListViewGrid_Holding">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <Image Source="{Binding Type,Converter={StaticResource IconConverter}}" Stretch="Fill" Width="40" Height="40"></Image>
+                                    <StackPanel Margin="20,0,0,0">
+                                        <TextBlock Text="{Binding DeviceName}" Style="{StaticResource TitleTextBlockStyle}" FontSize="22"></TextBlock>
+                                        <TextBlock Text="{Binding StatusMessage}" Foreground="{Binding StatusColor}" FontSize="14"></TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                                    <Button Name="Shutdown_Btn" Margin="0,0,8,0" Height="40" Width="120" Foreground="White" Background="#ff4343" Visibility="{Binding ShowCommandButton}" IsEnabled="{Binding IsEnabled}" Command="{Binding ShutdownCommand,Source={Binding MainViewModel, Source={StaticResource Locator}}}" CommandParameter="{Binding Details}">
+                                        <Button.Content>
+                                            <StackPanel Orientation="Horizontal">
+                                                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE7E8;" />
+                                                <TextBlock x:Uid="ShutdownBtn" Text="Shutdown" Margin="4,0,0,0"></TextBlock>
+                                            </StackPanel>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button Name="Reboot_Btn" Margin="0,0,8,0" Height="40" Width="120" Foreground="White" Background="#00cc6a" Visibility="{Binding ShowCommandButton}" IsEnabled="{Binding IsEnabled}" Command="{Binding RebootCommand,Source={Binding MainViewModel, Source={StaticResource Locator}}}" CommandParameter="{Binding Details}">
+                                        <Button.Content>
+                                            <StackPanel Orientation="Horizontal">
+                                                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE72C;" />
+                                                <TextBlock x:Uid="RestartBtn" Text="Restart" Margin="4,0,0,0"></TextBlock>
+                                            </StackPanel>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button Name="ShowConfigureDialog_Btn" Margin="0,0,8,0" Height="40" Width="248" Foreground="White" Background="#0078d7" Visibility="{Binding ShowConfigureButton}" Click="ShowConfigureDialog_Btn_Click" Tag="{Binding RemoteSys}" IsEnabled="{Binding IsEnabled}">
+                                        <Button.Content>
+                                            <StackPanel Orientation="Horizontal">
+                                                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE72A;" />
+                                                <TextBlock x:Uid="ConfigBtn" Text="Configure" Margin="4,0,0,0"></TextBlock>
+                                            </StackPanel>
+                                        </Button.Content>
+                                    </Button>
+                                </StackPanel>
+                                <FlyoutBase.AttachedFlyout>
+                                    <MenuFlyout>
+                                        <MenuFlyoutItem x:Uid="DeteleBtn" Text="Delete" Command="{Binding DeleteCommand,Source={Binding MainViewModel, Source={StaticResource Locator}}}" CommandParameter="{Binding UniqueId}" IsEnabled="{Binding ShowCommandButton,Converter={StaticResource BoolConverter}}"></MenuFlyoutItem>
+                                    </MenuFlyout>
+                                </FlyoutBase.AttachedFlyout>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <!--<ListViewItem>
+                        <Grid Margin="0,8,0,8">
+                            
+                        </Grid>
+                    </ListViewItem>
+                    <ListViewItem >
+                        <Grid Margin="0,8,0,8">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <Image Source="Assets/laptop.png" Stretch="Fill" Width="50" Height="50"></Image>
+                                <StackPanel Margin="20,0,0,0">
+                                    <TextBlock Text="KEVIN-LAPTOP" Style="{StaticResource TitleTextBlockStyle}" FontSize="22"></TextBlock>
+                                    <TextBlock Text="Haven't configured yet" Foreground="#FFFFB900" FontSize="14"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Right" Grid.Column="1">
+                                <Button Content="SHUTDOWN" HorizontalAlignment="Right"></Button>
+                            </StackPanel>
+                        </Grid>
+                    </ListViewItem>-->
+                </ListView>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Page>
