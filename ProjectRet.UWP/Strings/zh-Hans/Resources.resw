@@ -118,45 +118,77 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Available" xml:space="preserve">
-    <value>使用可能</value>
+    <value>可用</value>
   </data>
   <data name="CancelBtn.Content" xml:space="preserve">
-    <value>キャンセル</value>
+    <value>取消</value>
   </data>
   <data name="ConfigBtn.Text" xml:space="preserve">
-    <value>セットアップ</value>
+    <value>配置</value>
   </data>
   <data name="ConfigurationRequired" xml:space="preserve">
-    <value>初期セットアップが必要</value>
+    <value>需要配置</value>
   </data>
   <data name="DeleteBtn.Text" xml:space="preserve">
-    <value>削除</value>
+    <value>删除</value>
   </data>
   <data name="DeviceListHeader.Text" xml:space="preserve">
-    <value>デバイス一覧</value>
+    <value>设备列表</value>
+  </data>
+  <data name="ExceptionNavigationServiceExKeyIsInNavigationService" xml:space="preserve">
+    <value>The key {0} is already configured in NavigationService</value>
+    <comment>The page is already configured in navigation service</comment>
+  </data>
+  <data name="ExceptionNavigationServiceExPageNotFound" xml:space="preserve">
+    <value>Page not found: {0}. Did you forget to call NavigationService.Configure?</value>
+    <comment>Page to navigate not found in navigation service</comment>
+  </data>
+  <data name="ExceptionNavigationServiceExPageUnknow" xml:space="preserve">
+    <value>The page '{0}' is unknown by the NavigationService</value>
+    <comment>The page is unknown or not registered in navigation service</comment>
+  </data>
+  <data name="ExceptionNavigationServiceExTypeAlreadyConfigured" xml:space="preserve">
+    <value>This type is already configured with key {0}</value>
+    <comment>The page type is already configured with page key in navigation service</comment>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>失败</value>
+  </data>
+  <data name="FailedMessage" xml:space="preserve">
+    <value>请检查您的配置并重试</value>
   </data>
   <data name="Guide1.Text" xml:space="preserve">
-    <value>まずは初期セットアップ</value>
+    <value>配置</value>
   </data>
   <data name="Guide2.Text" xml:space="preserve">
-    <value>パソコンを遠隔でコントロールする</value>
+    <value>远程控制您的电脑</value>
   </data>
   <data name="Guide3.Text" xml:space="preserve">
-    <value>スマホ版をダウンロードする</value>
+    <value>下载移动版</value>
   </data>
   <data name="KeyDialog.Title" xml:space="preserve">
-    <value>セキュリティーキーを入力してください</value>
+    <value>请输入安全密钥</value>
+  </data>
+  <data name="Main_Title.Text" xml:space="preserve">
+    <value>Main</value>
+    <comment>Page title for Main</comment>
   </data>
   <data name="RefreshBtn.Content" xml:space="preserve">
-    <value>リフレッシュ</value>
+    <value>刷新</value>
   </data>
   <data name="RestartBtn.Text" xml:space="preserve">
-    <value>再起動</value>
+    <value>重启</value>
   </data>
   <data name="ShutdownBtn.Text" xml:space="preserve">
-    <value>シャットダウン</value>
+    <value>关机</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>成功</value>
+  </data>
+  <data name="SuccessMessage" xml:space="preserve">
+    <value>正在尝试关机。</value>
   </data>
   <data name="Unavailable" xml:space="preserve">
-    <value>使用不可</value>
+    <value>不可用</value>
   </data>
 </root>

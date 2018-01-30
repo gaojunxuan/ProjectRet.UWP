@@ -121,14 +121,14 @@ namespace ProjectRet.UWP.ViewModels
                         {
                             await Windows.ApplicationModel.Core.CoreApplication.MainView.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, async () =>
                             {
-                                await new MessageDialog("Your computer is being shutting down.", "Success").ShowAsync();
+                                await new MessageDialog("SuccessMessage".GetLocalized(), "Success".GetLocalized()).ShowAsync();
                             });
                         }
                         else
                         {
                             await Windows.ApplicationModel.Core.CoreApplication.MainView.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, async () =>
                             {
-                                await new MessageDialog("Please check your configuration.", "Failed").ShowAsync();
+                                await new MessageDialog("FailedMessage".GetLocalized(), "Failed".GetLocalized()).ShowAsync();
                             });
                         }
                     }));
@@ -153,14 +153,14 @@ namespace ProjectRet.UWP.ViewModels
                         {
                             await Windows.ApplicationModel.Core.CoreApplication.MainView.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, async() =>
                             {
-                                await new MessageDialog("Your computer is being shutting down.", "Success").ShowAsync();
+                                await new MessageDialog("SuccessMessage".GetLocalized(), "Success".GetLocalized()).ShowAsync();
                             });
                         }
                         else
                         {
                             await Windows.ApplicationModel.Core.CoreApplication.MainView.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, async () =>
                             {
-                                await new MessageDialog("Please check your configuration.", "Failed").ShowAsync();
+                                await new MessageDialog("FailedMessage".GetLocalized(), "Failed".GetLocalized()).ShowAsync();
                             });
                         }
                     }));

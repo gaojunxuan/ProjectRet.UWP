@@ -12,7 +12,6 @@ namespace ProjectRet.UWP.Helpers
 {
     public static class RemoteSystemHelper
     {
-        private static ResourceLoader resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
         public static DeviceType ConvertToDeviceType(string kind)
         {
             switch(kind)
@@ -29,13 +28,13 @@ namespace ProjectRet.UWP.Helpers
             if(status==RemoteSystemStatus.Available)
             {
                 if (DatabaseHelper.Exists(uniqueId))
-                    return resourceLoader.GetString("Available");
+                    return "Available".GetLocalized();
                 else
-                    return resourceLoader.GetString("ConfigurationRequired");       
+                    return "ConfigurationRequired".GetLocalized();       
             }
             else
             {
-                return resourceLoader.GetString("Unavailable");
+                return "Unavailable".GetLocalized();
             }
         }
         public static async Task<RemoteLaunchUriStatus> ExecuteCommand(RemoteSystem remoteSystem,Command comm)

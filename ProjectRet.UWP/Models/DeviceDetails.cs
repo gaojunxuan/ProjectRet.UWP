@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Windows.ApplicationModel.Resources;
 using Windows.System.RemoteSystems;
 using Windows.UI;
 using Windows.UI.Xaml;
@@ -26,11 +25,11 @@ namespace ProjectRet.UWP.Models
         {
             get
             {
-                if(StatusMessage== ResourceLoader.GetForCurrentView().GetString("Available"))
+                if(StatusMessage== "Available".GetLocalized())
                 {
                     return new SolidColorBrush(Color.FromArgb(255, 16, 124, 16));
                 }
-                else if(StatusMessage==ResourceLoader.GetForCurrentView().GetString("Unavailable"))
+                else if(StatusMessage=="Unavailable".GetLocalized())
                 {
                     return new SolidColorBrush(Color.FromArgb(255, 168, 0, 0));
                 }
@@ -73,7 +72,7 @@ namespace ProjectRet.UWP.Models
         {
             get
             {
-                if (StatusMessage == ResourceLoader.GetForCurrentView().GetString("Unavailable") || Type==DeviceType.Phone)
+                if (StatusMessage == "Unavailable".GetLocalized() || Type==DeviceType.Phone)
                     return false;
                 return true;
             }
