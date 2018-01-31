@@ -5,14 +5,17 @@
     xmlns:local="using:ProjectRet.UWP.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" 
+    xmlns:Interactions="using:Microsoft.Xaml.Interactions.Core"
     x:Uid="KeyDialog"
     mc:Ignorable="d"
     DataContext="{Binding ConfigureDialogViewModel, Source={StaticResource Locator}}"
-    Title="Enter the key">
+    Title="Enter the key" BorderBrush="#FF0078D7">
 
     <Grid>
         <StackPanel>
-            <TextBox Name="Key_Tbx"></TextBox>
+            <TextBox Style="{StaticResource TextBoxStyle}" Name="Key_Tbx" SelectionHighlightColor="#FF0078D7">
+            </TextBox>
             <StackPanel Orientation="Horizontal">
                 <Button Name="Config_Btn" Content="OK" Margin="0,12,0,0" Command="{Binding ConfigureCommand}" CommandParameter="{Binding Path=Text,ElementName=Key_Tbx}" Click="Config_Btn_Click"></Button>
                 <Button x:Uid="CancelBtn" Name="Cancel_Btn" Content="Cancel" Margin="12,12,0,0" Click="Cancel_Btn_Click"></Button>
