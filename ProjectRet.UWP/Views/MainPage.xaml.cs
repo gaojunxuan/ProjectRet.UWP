@@ -12,6 +12,7 @@ using ProjectRet.UWP.Helpers;
 using Windows.UI.Popups;
 using System.Diagnostics;
 using Windows.System.Profile;
+using Windows.System;
 
 namespace ProjectRet.UWP.Views
 {
@@ -49,14 +50,17 @@ namespace ProjectRet.UWP.Views
 
         private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            if(await WindowsHelloHelper.Auth())
+            if (await WindowsHelloHelper.Auth())
             {
+                SigninFailed_Grid.Visibility = Visibility.Collapsed;
+                Refresh_Btn.IsEnabled = true;
                 await ViewModel.BuildDeviceList();
             }
             else
             {
-                await new MessageDialog("Could not sign in. Make sure you have set up Windows Hello and entered the correct credentials.").ShowAsync();
+                await new MessageDialog("CouldNotSignIn".GetLocalized(), "Failed".GetLocalized()).ShowAsync();
                 Refresh_Btn.IsEnabled = false;
+                SigninFailed_Grid.Visibility = Visibility.Visible;
             }
         }
 
@@ -75,6 +79,22 @@ namespace ProjectRet.UWP.Views
         private void ListViewGrid_Holding(object sender, Windows.UI.Xaml.Input.HoldingRoutedEventArgs e)
         {
             FlyoutBase.ShowAttachedFlyout(sender as FrameworkElement);
+        }
+
+        private async void SigninFailed_Grid_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            if (await WindowsHelloHelper.Auth())
+            {
+                SigninFailed_Grid.Visibility = Visibility.Collapsed;
+                Refresh_Btn.IsEnabled = true;
+                await ViewModel.BuildDeviceList();
+            }
+            else
+            {
+                await new MessageDialog("CouldNotSignIn".GetLocalized(), "Failed".GetLocalized()).ShowAsync();
+                Refresh_Btn.IsEnabled = false;
+                SigninFailed_Grid.Visibility = Visibility.Visible;
+            }
         }
     }
 }

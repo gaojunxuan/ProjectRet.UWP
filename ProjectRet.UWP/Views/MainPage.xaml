@@ -125,32 +125,14 @@
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                    <!--<ListViewItem>
-                        <Grid Margin="0,8,0,8">
-                            
-                        </Grid>
-                    </ListViewItem>
-                    <ListViewItem >
-                        <Grid Margin="0,8,0,8">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                <Image Source="Assets/laptop.png" Stretch="Fill" Width="50" Height="50"></Image>
-                                <StackPanel Margin="20,0,0,0">
-                                    <TextBlock Text="KEVIN-LAPTOP" Style="{StaticResource TitleTextBlockStyle}" FontSize="22"></TextBlock>
-                                    <TextBlock Text="Haven't configured yet" Foreground="#FFFFB900" FontSize="14"></TextBlock>
-                                </StackPanel>
-                            </StackPanel>
-                            <StackPanel HorizontalAlignment="Right" Grid.Column="1">
-                                <Button Content="SHUTDOWN" HorizontalAlignment="Right"></Button>
-                            </StackPanel>
-                        </Grid>
-                    </ListViewItem>-->
                 </ListView>
             </StackPanel>
+            <Grid Name="SigninFailed_Grid" HorizontalAlignment="Center"  VerticalAlignment="Center" Tapped="SigninFailed_Grid_Tapped">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEB68;" Foreground="Gray" FontSize="48" Margin="0,0,8,0"/>
+                    <TextBlock x:Uid="SignInAgain" Text="Failed to sign in. Click here to try again." Style="{StaticResource TitleTextBlockStyle}" Foreground="Gray" VerticalAlignment="Center" Margin="8,0,0,0" TextWrapping="WrapWholeWords" HorizontalAlignment="Center"></TextBlock>
+                </StackPanel>
+            </Grid>
         </Grid>
-
     </Grid>
 </Page>

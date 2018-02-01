@@ -132,6 +132,9 @@
   <data name="ConfigurationRequired" xml:space="preserve">
     <value>初期セットアップが必要</value>
   </data>
+  <data name="CouldNotSignIn" xml:space="preserve">
+    <value>サインインできませんでした。Windows Helloの設定と資格情報の正誤を確認してから、やり直してください。 </value>
+  </data>
   <data name="CurrentPassword.Header" xml:space="preserve">
     <value>現在のパスワード</value>
   </data>
@@ -191,8 +194,14 @@
   <data name="SetPassword.Text" xml:space="preserve">
     <value>パスワードの追加</value>
   </data>
+  <data name="SetupWindowsHello" xml:space="preserve">
+    <value>Windows Helloをセットアップするには、設定アプリで暗証番号（PIN）を追加してください。</value>
+  </data>
   <data name="ShutdownBtn.Text" xml:space="preserve">
     <value>シャットダウン</value>
+  </data>
+  <data name="SignInAgain.Text" xml:space="preserve">
+    <value>サインインできません。ここにクリックしてやり直してください。</value>
   </data>
   <data name="Success" xml:space="preserve">
     <value>成功しました</value>

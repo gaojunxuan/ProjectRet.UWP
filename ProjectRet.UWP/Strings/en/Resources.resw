@@ -203,4 +203,13 @@
   <data name="SetPassword.Text" xml:space="preserve">
     <value>Set Password</value>
   </data>
+  <data name="CouldNotSignIn" xml:space="preserve">
+    <value>Could not sign in. Make sure you have set up Windows Hello and entered correct credentials.</value>
+  </data>
+  <data name="SetupWindowsHello" xml:space="preserve">
+    <value>To set up and log in with Windows Hello, go to system settings and add a PIN.</value>
+  </data>
+  <data name="SignInAgain.Text" xml:space="preserve">
+    <value>Failed to sign in. Click here to try again.</value>
+  </data>
 </root>

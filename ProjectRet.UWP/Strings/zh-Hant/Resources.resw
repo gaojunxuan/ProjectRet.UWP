@@ -132,6 +132,9 @@
   <data name="ConfigurationRequired" xml:space="preserve">
     <value>需要配置</value>
   </data>
+  <data name="CouldNotSignIn" xml:space="preserve">
+    <value>登入失敗。請確認您是否正確配置了 Windows Hello（或 PIN），並在登入時提供了正確的憑證。</value>
+  </data>
   <data name="CurrentPassword.Header" xml:space="preserve">
     <value>現在的密碼</value>
   </data>
@@ -191,8 +194,14 @@
   <data name="SetPassword.Text" xml:space="preserve">
     <value>添加密碼</value>
   </data>
+  <data name="SetupWindowsHello" xml:space="preserve">
+    <value>您尚未配置 Windows Hello。要使用 Windows Hello 登入，請到設置應用添加一個 PIN。</value>
+  </data>
   <data name="ShutdownBtn.Text" xml:space="preserve">
     <value>關機</value>
+  </data>
+  <data name="SignInAgain.Text" xml:space="preserve">
+    <value>登入失敗，輕觸這裡即可重試。</value>
   </data>
   <data name="Success" xml:space="preserve">
     <value>成功</value>

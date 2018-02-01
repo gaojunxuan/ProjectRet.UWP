@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Security.Credentials;
 using Windows.Security.Credentials.UI;
+using Windows.System;
 using Windows.UI.Popups;
 
 namespace ProjectRet.UWP.Helpers
@@ -36,7 +37,7 @@ namespace ProjectRet.UWP.Helpers
         {
             if(await WindowsHelloAvailableCheckAsync())
             {
-                UserConsentVerificationResult consentResult = await UserConsentVerifier.RequestVerificationAsync("userMessage");
+                UserConsentVerificationResult consentResult = await UserConsentVerifier.RequestVerificationAsync("");
                 if (consentResult != UserConsentVerificationResult.Verified)
                 {
                     return false;
@@ -48,7 +49,8 @@ namespace ProjectRet.UWP.Helpers
             }
             else
             {
-                await new MessageDialog("To set up and log in with Windows Hello, go to system settings and add a PIN.").ShowAsync();
+                await new MessageDialog("SetupWindowsHello".GetLocalized(), "Failed".GetLocalized()).ShowAsync();
+                await Launcher.LaunchUriAsync(new Uri("ms-settings:signinoptions"));
             }
             return false;
         }
