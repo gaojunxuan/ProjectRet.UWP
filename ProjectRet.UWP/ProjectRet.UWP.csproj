@@ -116,6 +116,7 @@
     <Compile Include="Activation\ActivationHandler.cs" />
     <Compile Include="Helpers\DatabaseHelper.cs" />
     <Compile Include="Helpers\DeviceTypeToImageSourceConverter.cs" />
+    <Compile Include="Helpers\WindowsHelloHelper.cs" />
     <Compile Include="Helpers\RemoteSystemHelper.cs" />
     <Compile Include="Models\Command.cs" />
     <Compile Include="Models\DeviceDetails.cs" />
@@ -133,6 +134,9 @@
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsDialog.xaml.cs">
+      <DependentUpon>SettingsDialog.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +182,10 @@
     <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SettingsDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

@@ -115,7 +115,7 @@ namespace ProjectRet.UWP.ViewModels
                     ?? (_shutdownCommand = new RelayCommand<DeviceDetails>(
                     async(x) =>
                     {
-                        var res = await RemoteSystemHelper.ExecuteCommand(x.RemoteSys, new Command() { Body = "shutdown", Credential = x.Credential });
+                        var res = await RemoteSystemHelper.ExecuteCommand(x.RemoteSys, new Command() { Body = "shutdown", Credential = x.Credential,GUID=x.UniqueId });
                         if (res == Windows.System.RemoteLaunchUriStatus.Success)
                         {
                             await Windows.ApplicationModel.Core.CoreApplication.MainView.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, async () =>
@@ -147,7 +147,7 @@ namespace ProjectRet.UWP.ViewModels
                     ?? (_rebootCommand = new RelayCommand<DeviceDetails>(
                     async (x) =>
                     {
-                        var res=await RemoteSystemHelper.ExecuteCommand(x.RemoteSys, new Command() { Body = "reboot", Credential = x.Credential });
+                        var res=await RemoteSystemHelper.ExecuteCommand(x.RemoteSys, new Command() { Body = "reboot", Credential = x.Credential,GUID = x.UniqueId });
                         if(res==Windows.System.RemoteLaunchUriStatus.Success)
                         {
                             await Windows.ApplicationModel.Core.CoreApplication.MainView.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, async() =>

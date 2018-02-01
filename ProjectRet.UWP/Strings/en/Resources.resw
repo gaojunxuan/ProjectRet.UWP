@@ -191,4 +191,16 @@
   <data name="SuccessMessage" xml:space="preserve">
     <value>Your computer is being shutting down.</value>
   </data>
+  <data name="ChangePassword.Text" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="CurrentPassword.Header" xml:space="preserve">
+    <value>Current password</value>
+  </data>
+  <data name="NewPassword.Header" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="SetPassword.Text" xml:space="preserve">
+    <value>Set Password</value>
+  </data>
 </root>

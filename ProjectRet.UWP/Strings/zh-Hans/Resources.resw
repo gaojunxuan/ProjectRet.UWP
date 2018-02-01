@@ -123,11 +123,17 @@
   <data name="CancelBtn.Content" xml:space="preserve">
     <value>取消</value>
   </data>
+  <data name="ChangePassword.Text" xml:space="preserve">
+    <value>更改密码</value>
+  </data>
   <data name="ConfigBtn.Text" xml:space="preserve">
     <value>配置</value>
   </data>
   <data name="ConfigurationRequired" xml:space="preserve">
     <value>需要配置</value>
+  </data>
+  <data name="CurrentPassword.Header" xml:space="preserve">
+    <value>现在的密码</value>
   </data>
   <data name="DeleteBtn.Text" xml:space="preserve">
     <value>删除</value>
@@ -173,11 +179,17 @@
     <value>Main</value>
     <comment>Page title for Main</comment>
   </data>
+  <data name="NewPassword.Header" xml:space="preserve">
+    <value>新密码</value>
+  </data>
   <data name="RefreshBtn.Content" xml:space="preserve">
     <value>刷新</value>
   </data>
   <data name="RestartBtn.Text" xml:space="preserve">
     <value>重启</value>
+  </data>
+  <data name="SetPassword.Text" xml:space="preserve">
+    <value>添加密码</value>
   </data>
   <data name="ShutdownBtn.Text" xml:space="preserve">
     <value>关机</value>

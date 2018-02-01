@@ -7,6 +7,11 @@ using Windows.UI.Xaml;
 using Windows.UI.Core;
 using Windows.System.RemoteSystems;
 using Windows.UI.Xaml.Controls.Primitives;
+using Windows.Security.Credentials.UI;
+using ProjectRet.UWP.Helpers;
+using Windows.UI.Popups;
+using System.Diagnostics;
+using Windows.System.Profile;
 
 namespace ProjectRet.UWP.Views
 {
@@ -43,8 +48,16 @@ namespace ProjectRet.UWP.Views
         }
 
         private async void Page_Loaded(object sender, RoutedEventArgs e)
-        {          
-            await ViewModel.BuildDeviceList();           
+        {
+            if(await WindowsHelloHelper.Auth())
+            {
+                await ViewModel.BuildDeviceList();
+            }
+            else
+            {
+                await new MessageDialog("Could not sign in. Make sure you have set up Windows Hello and entered the correct credentials.").ShowAsync();
+                Refresh_Btn.IsEnabled = false;
+            }
         }
 
         private async void ShowConfigureDialog_Btn_Click(object sender, RoutedEventArgs e)

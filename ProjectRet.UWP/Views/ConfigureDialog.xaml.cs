@@ -45,5 +45,6 @@ namespace ProjectRet.UWP.Views
         {
             this.Hide();
         }
+
     }
 }

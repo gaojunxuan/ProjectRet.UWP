@@ -123,17 +123,23 @@
   <data name="CancelBtn.Content" xml:space="preserve">
     <value>取消</value>
   </data>
+  <data name="ChangePassword.Text" xml:space="preserve">
+    <value>修改密碼</value>
+  </data>
   <data name="ConfigBtn.Text" xml:space="preserve">
     <value>配置</value>
   </data>
   <data name="ConfigurationRequired" xml:space="preserve">
     <value>需要配置</value>
   </data>
+  <data name="CurrentPassword.Header" xml:space="preserve">
+    <value>現在的密碼</value>
+  </data>
   <data name="DeleteBtn.Text" xml:space="preserve">
     <value>刪除</value>
   </data>
   <data name="DeviceListHeader.Text" xml:space="preserve">
-    <value>設備</value>
+    <value>設備一覽</value>
   </data>
   <data name="ExceptionNavigationServiceExKeyIsInNavigationService" xml:space="preserve">
     <value>The key {0} is already configured in NavigationService</value>
@@ -173,11 +179,17 @@
     <value>Main</value>
     <comment>Page title for Main</comment>
   </data>
+  <data name="NewPassword.Header" xml:space="preserve">
+    <value>新密碼</value>
+  </data>
   <data name="RefreshBtn.Content" xml:space="preserve">
     <value>刷新</value>
   </data>
   <data name="RestartBtn.Text" xml:space="preserve">
     <value>重啓</value>
+  </data>
+  <data name="SetPassword.Text" xml:space="preserve">
+    <value>添加密碼</value>
   </data>
   <data name="ShutdownBtn.Text" xml:space="preserve">
     <value>關機</value>
