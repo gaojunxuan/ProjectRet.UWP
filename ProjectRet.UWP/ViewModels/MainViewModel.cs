@@ -8,6 +8,7 @@ using ProjectRet.UWP.Helpers;
 using System.Linq;
 using GalaSoft.MvvmLight.Command;
 using Windows.UI.Popups;
+using Windows.UI.Xaml;
 
 namespace ProjectRet.UWP.ViewModels
 {
@@ -28,6 +29,36 @@ namespace ProjectRet.UWP.ViewModels
                 RaisePropertyChanged();
             }
         }
+        private bool isAuthed;
+
+        public bool IsAuthed
+        {
+            get { return isAuthed; }
+            set
+            {
+                isAuthed = value;
+                RaisePropertyChanged();
+                RaisePropertyChanged("ShowEmptyErrorMessage");
+            }
+        }
+
+        public Visibility ShowEmptyErrorMessage
+        {
+            get
+            {
+                if(IsAuthed)
+                {
+                    if (DeviceList == null)
+                        return Visibility.Visible;
+                    else
+                        return DeviceList.Count == 0 ? Visibility.Visible : Visibility.Collapsed;
+                }
+                else
+                {
+                    return Visibility.Collapsed;
+                }
+            }
+        }
         RemoteSystemWatcher m_remoteSystemWatcher;
         public async Task BuildDeviceList()
         {
@@ -35,6 +66,7 @@ namespace ProjectRet.UWP.ViewModels
             {
                 if(DeviceList!=null)
                     DeviceList.Clear();
+                RaisePropertyChanged("ShowEmptyErrorMessage");
             });
             if(m_remoteSystemWatcher!=null)
             {
@@ -60,7 +92,8 @@ namespace ProjectRet.UWP.ViewModels
                 {
                     var item = DeviceList.Where(q => q.UniqueId == args.RemoteSystemId).FirstOrDefault();
                     if (item != null)
-                        DeviceList.Remove(item);                
+                        DeviceList.Remove(item);
+                    RaisePropertyChanged("ShowEmptyErrorMessage");
                 });
             }
         }
@@ -72,6 +105,7 @@ namespace ProjectRet.UWP.ViewModels
                 await Windows.ApplicationModel.Core.CoreApplication.MainView.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
                 {
                     DeviceList.Add(new DeviceDetails() { DeviceName = args.RemoteSystem.DisplayName, UniqueId = args.RemoteSystem.Id, Type = RemoteSystemHelper.ConvertToDeviceType(args.RemoteSystem.Kind),StatusMessage=RemoteSystemHelper.GetStatusMessage(args.RemoteSystem.Status,args.RemoteSystem.Id), Credential=DatabaseHelper.GetKey(args.RemoteSystem.Id), RemoteSys=args.RemoteSystem });
+                    RaisePropertyChanged("ShowEmptyErrorMessage");
                 });
             }
             else
@@ -80,6 +114,7 @@ namespace ProjectRet.UWP.ViewModels
                 {
                     DeviceList = new ObservableCollection<DeviceDetails>();
                     DeviceList.Add(new DeviceDetails() { DeviceName = args.RemoteSystem.DisplayName, UniqueId = args.RemoteSystem.Id, Type = RemoteSystemHelper.ConvertToDeviceType(args.RemoteSystem.Kind),StatusMessage = RemoteSystemHelper.GetStatusMessage(args.RemoteSystem.Status, args.RemoteSystem.Id), Credential = DatabaseHelper.GetKey(args.RemoteSystem.Id), RemoteSys = args.RemoteSystem });
+                    RaisePropertyChanged("ShowEmptyErrorMessage");
                 });
             }
         }
@@ -147,7 +182,7 @@ namespace ProjectRet.UWP.ViewModels
                     ?? (_rebootCommand = new RelayCommand<DeviceDetails>(
                     async (x) =>
                     {
-                        var res=await RemoteSystemHelper.ExecuteCommand(x.RemoteSys, new Command() { Body = "reboot", Credential = x.Credential,GUID = x.UniqueId });
+                        var res = await RemoteSystemHelper.ExecuteCommand(x.RemoteSys, new Command() { Body = "reboot", Credential = x.Credential, GUID = x.UniqueId });
                         if(res==Windows.System.RemoteLaunchUriStatus.Success)
                         {
                             await Windows.ApplicationModel.Core.CoreApplication.MainView.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, async() =>
@@ -179,7 +214,6 @@ namespace ProjectRet.UWP.ViewModels
                     ?? (_refreshCommand = new RelayCommand(
                     async() =>
                     {
-
                         await BuildDeviceList();
                     }));
             }

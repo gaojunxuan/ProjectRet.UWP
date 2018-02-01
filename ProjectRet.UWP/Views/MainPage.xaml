@@ -127,11 +127,13 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackPanel>
-            <Grid Name="SigninFailed_Grid" HorizontalAlignment="Center"  VerticalAlignment="Center" Tapped="SigninFailed_Grid_Tapped">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEB68;" Foreground="Gray" FontSize="48" Margin="0,0,8,0"/>
-                    <TextBlock x:Uid="SignInAgain" Text="Failed to sign in. Click here to try again." Style="{StaticResource TitleTextBlockStyle}" Foreground="Gray" VerticalAlignment="Center" Margin="8,0,0,0" TextWrapping="WrapWholeWords" HorizontalAlignment="Center"></TextBlock>
-                </StackPanel>
+            <Grid Name="SigninFailed_Grid" Visibility="Collapsed" HorizontalAlignment="Center"  VerticalAlignment="Center" Tapped="SigninFailed_Grid_Tapped">
+                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEB68;" Foreground="Gray" FontSize="48" Margin="0,0,8,0" HorizontalAlignment="Left"/>
+                <TextBlock x:Uid="SignInAgain" Width="Auto"  Text="Failed to sign in. Click here to try again." Style="{StaticResource TitleTextBlockStyle}" Foreground="Gray" VerticalAlignment="Center" Margin="64,0,0,0" TextWrapping="WrapWholeWords" HorizontalAlignment="Center"></TextBlock>
+            </Grid>
+            <Grid Name="EmptyMessage_Grid" Visibility="{Binding ShowEmptyErrorMessage}" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock x:Uid="CantFindDevices" Text="Can't find any devices yet." Style="{StaticResource TitleTextBlockStyle}" Foreground="Gray" HorizontalAlignment="Right" Margin="38,0,0,0"></TextBlock>
+                <ProgressRing IsActive="True" HorizontalAlignment="Left" Foreground="#FF0078D7"></ProgressRing>
             </Grid>
         </Grid>
     </Grid>

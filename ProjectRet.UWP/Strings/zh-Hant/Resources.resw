@@ -123,6 +123,9 @@
   <data name="CancelBtn.Content" xml:space="preserve">
     <value>取消</value>
   </data>
+  <data name="CantFindDevices.Text" xml:space="preserve">
+    <value>尚未找到設備</value>
+  </data>
   <data name="ChangePassword.Text" xml:space="preserve">
     <value>修改密碼</value>
   </data>

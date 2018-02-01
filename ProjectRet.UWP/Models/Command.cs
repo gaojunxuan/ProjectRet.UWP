@@ -13,7 +13,7 @@ namespace ProjectRet.UWP.Models
         public string GUID { get; set; }
         public override string ToString()
         {
-            return $"projectret:?comm={Body}&auth={Credential}&key={GUID}";
+            return $"projectret:?comm={Body}&auth={Credential}&key={Uri.EscapeDataString(GUID)}";
         }
     }
 }

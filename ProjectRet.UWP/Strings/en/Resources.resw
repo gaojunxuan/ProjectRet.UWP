@@ -212,4 +212,7 @@
   <data name="SignInAgain.Text" xml:space="preserve">
     <value>Failed to sign in. Click here to try again.</value>
   </data>
+  <data name="CantFindDevices.Text" xml:space="preserve">
+    <value>Can't find any devices yet.</value>
+  </data>
 </root>

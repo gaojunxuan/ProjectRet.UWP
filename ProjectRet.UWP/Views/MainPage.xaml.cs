@@ -55,12 +55,14 @@ namespace ProjectRet.UWP.Views
                 SigninFailed_Grid.Visibility = Visibility.Collapsed;
                 Refresh_Btn.IsEnabled = true;
                 await ViewModel.BuildDeviceList();
+                ViewModel.IsAuthed = true;
             }
             else
             {
                 await new MessageDialog("CouldNotSignIn".GetLocalized(), "Failed".GetLocalized()).ShowAsync();
                 Refresh_Btn.IsEnabled = false;
                 SigninFailed_Grid.Visibility = Visibility.Visible;
+                ViewModel.IsAuthed = false;
             }
         }
 
@@ -88,12 +90,14 @@ namespace ProjectRet.UWP.Views
                 SigninFailed_Grid.Visibility = Visibility.Collapsed;
                 Refresh_Btn.IsEnabled = true;
                 await ViewModel.BuildDeviceList();
+                ViewModel.IsAuthed = true;
             }
             else
             {
                 await new MessageDialog("CouldNotSignIn".GetLocalized(), "Failed".GetLocalized()).ShowAsync();
                 Refresh_Btn.IsEnabled = false;
                 SigninFailed_Grid.Visibility = Visibility.Visible;
+                ViewModel.IsAuthed = false;
             }
         }
     }
