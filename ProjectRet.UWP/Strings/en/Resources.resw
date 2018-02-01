@@ -173,7 +173,7 @@
   <data name="ConfigurationRequired" xml:space="preserve">
     <value>Configuration required</value>
   </data>
-  <data name="KeyDialog.Title" xml:space="preserve">
+  <data name="KeyDialog.Text" xml:space="preserve">
     <value>Enter the key</value>
   </data>
   <data name="Unavailable" xml:space="preserve">

@@ -172,7 +172,7 @@
   <data name="Guide3.Text" xml:space="preserve">
     <value>下载移动版</value>
   </data>
-  <data name="KeyDialog.Title" xml:space="preserve">
+  <data name="KeyDialog.Text" xml:space="preserve">
     <value>请输入安全密钥</value>
   </data>
   <data name="Main_Title.Text" xml:space="preserve">

@@ -172,7 +172,7 @@
   <data name="Guide3.Text" xml:space="preserve">
     <value>スマホ版をダウンロードする</value>
   </data>
-  <data name="KeyDialog.Title" xml:space="preserve">
+  <data name="KeyDialog.Text" xml:space="preserve">
     <value>セキュリティーキーを入力してください</value>
   </data>
   <data name="Main_Title.Text" xml:space="preserve">
