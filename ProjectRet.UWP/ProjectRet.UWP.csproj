@@ -95,6 +95,9 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="AsyncStackTraceEx">
+      <Version>1.0.1.1</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.0.1</Version>
     </PackageReference>
@@ -116,6 +119,7 @@
     <Compile Include="Activation\ActivationHandler.cs" />
     <Compile Include="Helpers\DatabaseHelper.cs" />
     <Compile Include="Helpers\DeviceTypeToImageSourceConverter.cs" />
+    <Compile Include="Helpers\ExceptionHandlingSynchronizationContext.cs" />
     <Compile Include="Helpers\WindowsHelloHelper.cs" />
     <Compile Include="Helpers\RemoteSystemHelper.cs" />
     <Compile Include="Models\Command.cs" />

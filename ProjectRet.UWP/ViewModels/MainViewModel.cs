@@ -188,6 +188,7 @@ namespace ProjectRet.UWP.ViewModels
                             await Windows.ApplicationModel.Core.CoreApplication.MainView.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, async() =>
                             {
                                 await new MessageDialog("SuccessMessage".GetLocalized(), "Success".GetLocalized()).ShowAsync();
+                                await BuildDeviceList();
                             });
                         }
                         else

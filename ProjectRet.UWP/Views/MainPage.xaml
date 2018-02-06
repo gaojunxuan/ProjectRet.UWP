@@ -76,7 +76,7 @@
                         </HyperlinkButton.ContentTemplate>
                     </HyperlinkButton>
                 </Grid>
-                <ListView Name="DeviceList_ListView" Margin="8,8,0,0" SelectionMode="Single" UseSystemFocusVisuals="False" ItemContainerStyle="{StaticResource ListViewItemStyle1}" ItemsSource="{Binding DeviceList}" HorizontalContentAlignment="Stretch">
+                <ListView Name="DeviceList_ListView" Margin="8,8,0,0" SelectionMode="None" IsItemClickEnabled="True" UseSystemFocusVisuals="False" ItemContainerStyle="{StaticResource ListViewItemStyle1}" ItemsSource="{Binding DeviceList}" HorizontalContentAlignment="Stretch">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Grid x:Name="ListViewGrid" Margin="0,0,0,8" RightTapped="ListViewGrid_RightTapped" Holding="ListViewGrid_Holding">

@@ -25,7 +25,7 @@ namespace ProjectRet.UWP.Views
 
         public MainPage()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
         FlipView flipView;
         DispatcherTimer timer;
@@ -65,7 +65,6 @@ namespace ProjectRet.UWP.Views
                 ViewModel.IsAuthed = false;
             }
         }
-
         private async void ShowConfigureDialog_Btn_Click(object sender, RoutedEventArgs e)
         {
             ConfigureDialog configureDialog = new ConfigureDialog(((Button)sender).Tag as RemoteSystem);
