@@ -189,7 +189,7 @@
     <value>Success</value>
   </data>
   <data name="SuccessMessage" xml:space="preserve">
-    <value>Your computer is being shutting down.</value>
+    <value>Your computer is being shut down.</value>
   </data>
   <data name="ChangePassword.Text" xml:space="preserve">
     <value>Change Password</value>
