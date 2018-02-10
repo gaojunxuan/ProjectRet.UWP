@@ -20,6 +20,7 @@ namespace ProjectRet.UWP.Helpers
                 case "Laptop": return DeviceType.Laptop;
                 case "Phone": return DeviceType.Phone;
                 case "Xbox": return DeviceType.Xbox;
+                case "Tablet":return DeviceType.Tablet;
                 default:return DeviceType.Unknown;
             }
         }

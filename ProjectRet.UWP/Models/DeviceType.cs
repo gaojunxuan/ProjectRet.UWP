@@ -12,6 +12,9 @@ namespace ProjectRet.UWP.Models
         Desktop,
         Laptop,
         Xbox,
+        Tablet,
+        Hub,
+        HoloLens,
         Unknown
     }
 }

@@ -21,6 +21,7 @@ namespace ProjectRet.UWP.Helpers
                     case DeviceType.Desktop: return new BitmapImage(new Uri("ms-appx:///Assets/desktop.png"));
                     case DeviceType.Laptop: return new BitmapImage(new Uri("ms-appx:///Assets/laptop.png"));
                     case DeviceType.Phone: return new BitmapImage(new Uri("ms-appx:///Assets/phone.png"));
+                    case DeviceType.Tablet:return new BitmapImage(new Uri("ms-appx:///Assets/tablet.png"));
                     default: return new BitmapImage(new Uri("ms-appx:///Assets/desktop.png"));
                 }
             }
